@@ -14,6 +14,16 @@
         </div>
     </div>
     <div class="row schedule">
-
+        <div ng-repeat="day in schedule" class="col s12">
+            <div class="day-item">
+                <span class="day.title">{{moment().day($index + 1).format('dddd')}}</span>
+                <div ng-repeat="class in day">
+                    <div class="class-item">
+                        <span ng-show="!class.title">{{$index + 1}}</span>
+                        <span ng-show="class.title">{{class.title}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

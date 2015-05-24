@@ -8081,7 +8081,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   margin-bottom: 0; }
 
 .schedule .day-item {
-  border: 1px solid #a5a5a5;
+  border: 2px solid #a5a5a5;
   margin-bottom: 20px;
   text-align: center;
   max-width: 500px;
@@ -8091,18 +8091,24 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   .schedule .day-item .day-title {
     display: block;
     padding: 10px;
-    border-bottom: 1px solid #a5a5a5;
+    border-bottom: 2px solid #a5a5a5;
     font-size: 1.2rem;
     font-weight: bold;
     background-color: #4db6ac; }
   .schedule .day-item > div:last-child .class-item {
     border: none; }
   .schedule .day-item .class-item {
-    padding: 10px;
-    border-bottom: 1px solid #a5a5a5; }
+    border-bottom: 2px solid #a5a5a5; }
+    .schedule .day-item .class-item > div:last-child .class-info {
+      border-bottom: none; }
+    .schedule .day-item .class-item .placeholder {
+      display: inline-block;
+      padding: 10px; }
     .schedule .day-item .class-item .class-info {
       text-align: left;
-      position: relative; }
+      position: relative;
+      padding: 10px;
+      border-bottom: 1px dashed #a5a5a5; }
       .schedule .day-item .class-item .class-info .type,
       .schedule .day-item .class-item .class-info .title,
       .schedule .day-item .class-item .class-info .lecturer {
@@ -8116,8 +8122,8 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
         font-weight: bold; }
       .schedule .day-item .class-item .class-info .room {
         position: absolute;
-        top: -5px;
-        right: -5px;
+        top: 5px;
+        right: 5px;
         border: 1px solid #a5a5a5;
         border-radius: 50%;
         padding: 6px 5px; }

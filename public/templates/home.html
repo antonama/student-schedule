@@ -24,14 +24,17 @@
         <div ng-repeat="day in schedule" class="col s12">
             <div class="day-item">
                 <span class="day-title" ng-bind="moment().day($index + 1).format('dddd')"></span>
+
                 <div ng-repeat="class in day">
                     <div class="class-item">
-                        <span ng-show="!class.title">{{$index + 1}}</span>
-                        <div class="class-info" ng-show="class.title">
-                            <span class="type">{{class.type}}</span>
-                            <span class="title">{{class.title}}</span>
-                            <span class="lecturer">{{class.lecturer.name.surname}} {{class.lecturer.name.initials}}</span>
-                            <span class="room" ng-show="class.room">{{class.room.title}}</span>
+                        <span ng-show="!class.length" class="placeholder">{{$index + 1}}</span>
+                        <div ng-repeat="dupe in class">
+                            <div class="class-info" ng-show="dupe.title">
+                                <span class="type">{{dupe.type}}</span>
+                                <span class="title">{{dupe.title}}</span>
+                                <span class="lecturer">{{dupe.lecturer.name.surname}} {{dupe.lecturer.name.initials}}</span>
+                                <span class="room" ng-show="dupe.room">{{dupe.room.title}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

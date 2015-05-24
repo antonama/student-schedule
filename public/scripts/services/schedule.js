@@ -25,14 +25,14 @@ angular.module("st-schedule")
 
                         schedule.forEach(function (item, index, array) {
                             for (var i = 0; i < settings.getObject().maxClassesInDay; i++) {
-                                array[index].push({});
+                                array[index].push([]);
                             }
                         });
 
                         serverSchedule.forEach(function (item, index, array) {
-                            schedule[item.day][item.index] = angular.extend(item, {
+                            schedule[item.day][item.index].push(angular.extend(item, {
                                 title: item.class.title
-                            });
+                            }));
                         });
 
                         return schedule;

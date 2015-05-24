@@ -2,7 +2,9 @@
  * Created by Anton on 5/24/2015.
  */
 
-module.exports = function (Schedule, Group) {
+var ObjectId = require('mongoose').Types.ObjectId;
+
+module.exports = function (Schedule, Group, Announcements) {
 
     app.get("/api/schedule", function (req, res) {
         Schedule
@@ -35,5 +37,18 @@ module.exports = function (Schedule, Group) {
 
     app.get("/api/groups/years", function (req, res) {
 
+    });
+
+    app.get("/api/announcements", function (req, res) {
+        Announcements
+            .find()
+            .where("for").in([new ObjectId(req.query.group)])
+            .exec(function (err, found) {
+                if (!err) {
+                    res.send(found);
+                } else {
+                    res.send(err);
+                }
+            });
     });
 };

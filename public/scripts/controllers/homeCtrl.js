@@ -3,7 +3,7 @@
  */
 
 angular.module("st-schedule")
-    .controller("HomeCtrl", function ($scope, $cookies, groups, schedule, cfpLoadingBar) {
+    .controller("HomeCtrl", function ($scope, $cookies, groups, schedule, announcements, cfpLoadingBar) {
         var yearGroup = $cookies.getObject("rfe-year-group");
 
         $scope.years = [1,2,3,4,5];
@@ -37,11 +37,18 @@ angular.module("st-schedule")
                 group: $scope.selectedGroup
             });
 
+            getAnnouncements($scope.selectedGroup._id);
             return schedule.getSchedule($scope.selectedGroup._id).then(function (schedule) {
                 $scope.schedule = schedule;
                 cfpLoadingBar.complete();
             });
         };
+
+        function getAnnouncements (group) {
+            announcements.get(group).then(function (announcements) {
+                $scope.announcements = announcements;
+            });
+        }
 
         if (!yearGroup) {
             $scope.changeYear(1);

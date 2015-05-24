@@ -5,6 +5,8 @@
 var mongoose = require("mongoose"),
     db = mongoose.createConnection('mongodb://anton.abramovich:9875321Velvifoz@ds053139.mongolab.com:53139/schedule');
 
+mongoose.set('debug', true);
+
 db.once('open', function () {
     var groupSchema = require("./schemas/groupSchema"),
         scheduleSchema = require("./schemas/scheduleSchema"),
@@ -30,5 +32,5 @@ db.once('open', function () {
     Staff = db.model("Staff", staffSchema);
     Announcement = db.model("Announcement", announcementSchema);
 
-    require("./handlers/main")(Schedule, Group);
+    require("./handlers/main")(Schedule, Group, Announcement);
 });

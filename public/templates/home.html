@@ -13,6 +13,13 @@
                     ng-change="getSchedule(selectedGroup)"></select>
         </div>
     </div>
+    <div class="row announcements" ng-show="announcements.length">
+        <div ng-repeat="announcement in announcements" class="col s12">
+            <div class="announcement-item">
+                <span class="body">{{announcement.body}}</span>
+            </div>
+        </div>
+    </div>
     <div class="row schedule">
         <div ng-repeat="day in schedule" class="col s12">
             <div class="day-item">

@@ -3,7 +3,7 @@
  */
 
 angular.module("st-schedule")
-    .controller("HomeCtrl", function ($scope, $cookies, groups, schedule, announcements, cfpLoadingBar) {
+    .controller("HomeCtrl", function ($scope, $cookies, groups, schedule, announcements, cfpLoadingBar, settings) {
         var yearGroup = $cookies.getObject("rfe-year-group");
 
         $scope.years = [1,2,3,4,5];

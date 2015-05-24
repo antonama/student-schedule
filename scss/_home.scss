@@ -98,11 +98,11 @@ $border-color: #a5a5a5;
     left: 50%;
     transform: translate(-50%, 0);
     padding: 10px 5px;
-
     background-color: color("yellow", "accent-1");
-
-    .body {
-
-    }
   }
+}
+
+.no-publish {
+  font-size: 1.5rem;
+  color: $border-color;
 }

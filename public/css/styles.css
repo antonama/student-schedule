@@ -8135,3 +8135,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   transform: translate(-50%, 0);
   padding: 10px 5px;
   background-color: #ffff8d; }
+
+.no-publish {
+  font-size: 1.5rem;
+  color: #a5a5a5; }

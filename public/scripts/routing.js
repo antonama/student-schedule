@@ -7,6 +7,11 @@ angular.module("st-schedule").config(function ($urlRouterProvider, $stateProvide
 
     $stateProvider.state("home", {
         url: "/home",
+        resolve: {
+            "settings": function (settings) {
+                return settings.get();
+            }
+        },
         templateUrl: "templates/home.html",
         controller: "HomeCtrl"
     });

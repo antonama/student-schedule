@@ -3,16 +3,20 @@
  */
 
 angular.module("st-schedule")
-    .factory("announcements", function ($http) {
+    .factory("announcements", function ($q, $http, settings) {
         return {
             get: function (group) {
-                return $http.get("/api/announcements", {
-                    params: {
-                        group: group
-                    }
-                }).then(function (res) {
-                    return res.data;
-                });
+                if (!settings.getObject().showSchedule) {
+                    return $q.when([]);
+                } else {
+                    return $http.get("/api/announcements", {
+                        params: {
+                            group: group
+                        }
+                    }).then(function (res) {
+                        return res.data;
+                    });
+                }
             }
         }
     });

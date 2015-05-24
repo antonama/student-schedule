@@ -4,7 +4,7 @@
 
 var ObjectId = require('mongoose').Types.ObjectId;
 
-module.exports = function (Schedule, Group, Announcements) {
+module.exports = function (Schedule, Group, Announcements, Settings) {
 
     app.get("/api/schedule", function (req, res) {
         Schedule
@@ -26,6 +26,7 @@ module.exports = function (Schedule, Group, Announcements) {
         Group
             .find()
             .where("year").equals(year)
+            .sort("title")
             .exec(function (err, found) {
                 if (!err) {
                     res.send(found);
@@ -43,6 +44,18 @@ module.exports = function (Schedule, Group, Announcements) {
         Announcements
             .find()
             .where("for").in([new ObjectId(req.query.group)])
+            .exec(function (err, found) {
+                if (!err) {
+                    res.send(found);
+                } else {
+                    res.send(err);
+                }
+            });
+    });
+
+    app.get("/api/settings", function (req, res) {
+        Settings
+            .find()
             .exec(function (err, found) {
                 if (!err) {
                     res.send(found);

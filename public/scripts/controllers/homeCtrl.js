@@ -7,6 +7,7 @@ angular.module("st-schedule")
         var yearGroup = $cookies.getObject("rfe-year-group");
 
         $scope.years = [1,2,3,4,5];
+        $scope.moment = moment;
 
         $scope.changeYear = function (year) {
             cfpLoadingBar.start();

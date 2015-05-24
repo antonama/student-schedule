@@ -3,3 +3,78 @@
     padding-left: 15px;
   }
 }
+
+$border-color: #a5a5a5;
+.schedule {
+
+  > div {
+    &:last-child {
+      .day-item {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .day-item {
+    border: 1px solid $border-color;
+    margin-bottom: 20px;
+    text-align: center;
+    max-width: 500px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+
+    .day-title {
+      display: block;
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+      font-size: 1.2rem;
+      font-weight: bold;
+      background-color: color('teal', 'lighten-2');
+    }
+
+    > div {
+      &:last-child {
+        .class-item {
+          border: none;
+        }
+      }
+    }
+
+    .class-item {
+      padding: 10px;
+      border-bottom: 1px solid $border-color;
+
+      .class-info {
+        text-align: left;
+        position: relative;
+
+        .type,
+        .title,
+        .lecturer {
+          display: block;
+        }
+
+        .type,
+        .lecturer,
+        .room {
+          font-size: 0.8rem;
+          color: #757575;
+        }
+
+        .title {
+          font-weight: bold;
+        }
+
+        .room {
+          position: absolute;
+          top: -5px;
+          right: -5px;
+          border: 1px solid #a5a5a5;
+          border-radius: 50%;
+          padding: 6px 5px;
+        }
+      }
+    }
+  }
+}

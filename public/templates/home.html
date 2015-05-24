@@ -24,7 +24,7 @@
                             <span class="type">{{class.type}}</span>
                             <span class="title">{{class.title}}</span>
                             <span class="lecturer">{{class.lecturer.name.surname}} {{class.lecturer.name.initials}}</span>
-                            <span class="room">{{class.room.title}}</span>
+                            <span class="room" ng-show="class.room">{{class.room.title}}</span>
                         </div>
                     </div>
                 </div>

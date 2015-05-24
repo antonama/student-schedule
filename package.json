@@ -1,0 +1,31 @@
+{
+  "name": "studentSchedule",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "angular-loading-bar": "^0.7.1",
+    "express": "^4.12.4",
+    "gulp": "^3.8.11",
+    "gulp-strip-comments": "^1.0.1",
+    "gulp-concat": "^2.5.2",
+    "gulp-sass": "^2.0.1",
+    "mongoose": "^4.0.3",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/antonama/student-schedule.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonama/student-schedule/issues"
+  },
+  "homepage": "https://github.com/antonama/student-schedule"
+}

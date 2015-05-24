@@ -8128,7 +8128,7 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .announcements .announcement-item {
   border: 1px solid #a5a5a5;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
   max-width: 500px;
   position: relative;
   left: 50%;

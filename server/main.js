@@ -30,5 +30,5 @@ db.once('open', function () {
     Staff = db.model("Staff", staffSchema);
     Announcement = db.model("Announcement", announcementSchema);
 
-    require("./handlers/main")(Schedule, Group, Announcement, Settings);
+    require("./handlers/main")(Schedule, Group, Announcement, Settings, Staff, Room);
 });

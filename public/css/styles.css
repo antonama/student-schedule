@@ -8146,3 +8146,20 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
 .no-publish {
   font-size: 1.5rem;
   color: #a5a5a5; }
+
+.navigation-buttons {
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: relative;
+  text-align: center; }
+  .navigation-buttons a {
+    margin-bottom: 10px;
+    height: initial;
+    line-height: normal;
+    padding: 10px 10px;
+    margin-right: 5px; }
+
+.staff-schedule .input-field {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0); }

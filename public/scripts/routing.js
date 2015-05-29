@@ -20,13 +20,13 @@ angular.module("st-schedule").config(function ($urlRouterProvider, $stateProvide
         url: "/home",
         templateUrl: "templates/home.html",
         controller: "HomeCtrl"
-    }).state("main.staff", {
-        url: "/staff/list",
-        templateUrl: "templates/staff.html",
-        controller: "StaffCtrl"
     }).state("main.staff_schedule", {
-        url: "/staff/{id}",
+        url: "/staff",
         templateUrl: "templates/staff.schedule.html",
         controller: "StaffScheduleCtrl"
+    }).state("main.room_schedule", {
+        url: "/room",
+        templateUrl: "templates/room.schedule.html",
+        controller: "RoomScheduleCtrl"
     });
 });

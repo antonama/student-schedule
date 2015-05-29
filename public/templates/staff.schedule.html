@@ -2,7 +2,7 @@
     <div class="row">
         <div class="input-field col s10">
             <select class="browser-default"
-                    ng-options="lecturer._id as lecturer.name.surname for lecturer in staff"
+                    ng-options="lecturer._id as lecturer.name.surname + ' ' + lecturer.name.initials for lecturer in staff"
                     ng-model="lecturerId"
                     ng-change="changeLecturer(lecturerId)"></select>
         </div>
@@ -15,13 +15,16 @@
                 <div ng-repeat="class in day">
                     <div class="class-item">
                         <span ng-show="!class.length" class="placeholder">{{$index + 1}}</span>
-                        <div ng-repeat="dupe in class">
-                            <div class="class-info" ng-show="dupe.title">
-                                <span class="type">{{dupe.type}}</span>
-                                <span class="title">{{dupe.title}}</span>
-                                <!--<span class="lecturer">{{dupe.lecturer.name.surname}} {{dupe.lecturer.name.initials}}</span>-->
-                                <span class="room" ng-show="dupe.room">{{dupe.room.title}}</span>
-                            </div>
+                        <div class="class-info" ng-show="class[0].title">
+                            <span class="type">{{class[0].type}}</span>
+                            <span class="title">{{class[0].title}}</span>
+                            <span class="year">Курс: {{class[0].group.year}}</span>
+                            <span class="groups">Группы:
+                                <span ng-repeat="dupe in class">
+                                    {{dupe.group.title}}<span ng-show="!$last">,</span>
+                                </span>
+                            </span>
+                            <span class="room" ng-show="class[0].room">{{class[0].room.title}}</span>
                         </div>
                     </div>
                 </div>

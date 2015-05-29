@@ -1,4 +1,4 @@
-<div class="container staff-schedule">
+<div class="container room-schedule">
     <div class="row">
         <div class="input-field col s10">
             <select class="browser-default"
@@ -15,12 +15,16 @@
                 <div ng-repeat="class in day">
                     <div class="class-item">
                         <span ng-show="!class.length" class="placeholder">{{$index + 1}}</span>
-                        <div ng-repeat="dupe in class">
-                            <div class="class-info" ng-show="dupe.title">
-                                <span class="type">{{dupe.type}}</span>
-                                <span class="title">{{dupe.title}}</span>
-                                <span class="lecturer">{{dupe.lecturer.name.surname}} {{dupe.lecturer.name.initials}}</span>
-                            </div>
+                        <div ng-show="class.length" class="class-info">
+                            <span class="type">{{class[0].type}}</span>
+                            <span class="title">{{class[0].title}}</span>
+                            <span class="lecturer">{{class[0].lecturer.name.surname}} {{class[0].lecturer.name.initials}}</span>
+                            <span class="year">Курс: {{class[0].group.year}}</span>
+                            <span class="groups">Группы:
+                                <span ng-repeat="dupe in class">
+                                    {{dupe.group.title}}<span ng-show="!$last">,</span>
+                                </span>
+                            </span>
                         </div>
                     </div>
                 </div>

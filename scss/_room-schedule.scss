@@ -1,4 +1,4 @@
-.staff-schedule {
+.room-schedule {
   .input-field {
     position: relative;
     left: 50%;
@@ -15,6 +15,12 @@
     .class-item {
       .class-info {
         border: none;
+
+        .lecturer {
+          font-size: 1em;
+          color: inherit;
+          display: block;
+        }
       }
     }
   }

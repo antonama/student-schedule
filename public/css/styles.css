@@ -8163,3 +8163,28 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   position: relative;
   left: 50%;
   transform: translate(-50%, 0); }
+
+.staff-schedule .day-item .year,
+.staff-schedule .day-item .groups {
+  font-size: 0.8rem;
+  color: #757575; }
+
+.staff-schedule .day-item .class-item .class-info {
+  border: none; }
+
+.room-schedule .input-field {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0); }
+
+.room-schedule .day-item .year,
+.room-schedule .day-item .groups {
+  font-size: 0.8rem;
+  color: #757575; }
+
+.room-schedule .day-item .class-item .class-info {
+  border: none; }
+  .room-schedule .day-item .class-item .class-info .lecturer {
+    font-size: 1em;
+    color: inherit;
+    display: block; }

@@ -1,0 +1,36 @@
+<div class="container staff-schedule">
+    <div class="row">
+        <div class="input-field col s10">
+            <select class="browser-default"
+                    ng-options="room._id as room.title for room in rooms"
+                    ng-model="roomId"
+                    ng-change="changeRoom(roomId)"></select>
+        </div>
+    </div>
+    <div class="row schedule">
+        <div ng-repeat="day in schedule" class="col s12">
+            <div class="day-item">
+                <span class="day-title" ng-bind="moment().day($index + 1).format('dddd')"></span>
+
+                <div ng-repeat="class in day">
+                    <div class="class-item">
+                        <span ng-show="!class.length" class="placeholder">{{$index + 1}}</span>
+                        <div ng-repeat="dupe in class">
+                            <div class="class-info" ng-show="dupe.title">
+                                <span class="type">{{dupe.type}}</span>
+                                <span class="title">{{dupe.title}}</span>
+                                <span class="lecturer">{{dupe.lecturer.name.surname}} {{dupe.lecturer.name.initials}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col s10 navigation-buttons">
+            <a class="waves-effect waves-light btn" ui-sref="main.home">Расписание групп</a>
+            <a class="waves-effect waves-light btn" ui-sref="main.staff_schedule">Расписание преподвателей</a>
+        </div>
+    </div>
+</div>
